@@ -1,16 +1,63 @@
-# React + Vite
+# Banking App Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern frontend interface for the Simple Banking Application, built with **React** and **Vite**. This application handles user authentication (login/registration) and banking operations by communicating with a Spring Boot backend.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Framework:** [React](https://react.dev/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Styling:** CSS
+* **Linting:** ESLint
 
-## React Compiler
+## 📋 Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Before you begin, ensure you have the following installed:
+* [Node.js](https://nodejs.org/) (v14 or higher recommended)
+* npm (Node Package Manager)
 
-## Expanding the ESLint configuration
+## 🛠️ Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/kkalchake/banking-frontend.git](https://github.com/kkalchake/banking-frontend.git)
+    cd banking-frontend
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the Development Server**
+    ```bash
+    npm run dev
+    ```
+    The app will typically run at `http://localhost:5173` (check your terminal for the exact port).
+
+## 🔌 Backend Integration
+
+This frontend is designed to work with a local Java/Spring Boot backend.
+* **Backend URL:** The app expects the backend to be running at `http://localhost:8080`.
+* **Endpoints Used:**
+    * `POST /api/register` - Create a new user
+    * `POST /api/login` - Authenticate user
+    * `POST /api/account` - Create a new bank account
+    * `GET /api/balance` - Check balance
+    * `POST /api/deposit` - Deposit funds
+    * `POST /api/withdraw` - Withdraw funds
+
+> **Note:** Ensure your backend server is running before attempting to log in or register.
+
+## 📂 Project Structure
+
+```text
+banking-frontend/
+├── public/          # Static assets
+├── src/
+│   ├── components/  # React components (Login, Dashboard, etc.)
+│   ├── App.jsx      # Main application component
+│   ├── main.jsx     # Entry point
+│   └── index.css    # Global styles
+├── .env             # Environment variables
+├── index.html       # HTML entry point
+└── vite.config.js   # Vite configuration
